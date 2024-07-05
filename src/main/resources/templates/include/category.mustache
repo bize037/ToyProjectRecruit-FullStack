@@ -1,0 +1,105 @@
+<div class="row">
+    <div class="col-sm-2">
+        <form id="recruit" action="/board/recruit" method="get">
+            <button type="button" value="모집중" onclick="recruit(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">모집중</button>
+            <button type="button" value="모집완료" onclick="recruit(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">모집완료</button>
+        </form>
+    </div>
+    <div class="col-sm-2">
+        <form id="online" action="/board/online" method="get">
+            <button type="button" value="온라인" onclick="online(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">온라인</button>
+            <button type="button" value="오프라인" onclick="online(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">오프라인</button>
+        </form>
+    </div>
+    <div class="col-sm-2">
+        <form id="career" action="/board/career" method="get">
+            <button type="button" value="초보" onclick="career(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">초보</button>
+            <button type="button" value="경력자" onclick="career(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">경력자</button>
+        </form>
+    </div>
+    <div class="col-sm-2">
+        <form id="typeCategory" action="/board/type" method="get">
+            <button type="button" value="프론트엔드" onclick="typeCategory(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">프론트엔드</button>
+            <button type="button" value="백엔드" onclick="typeCategory(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">백엔드</button>
+            <button type="button" value="모바일" onclick="typeCategory(this)" class="btn btn-info my-2 btn-block" style="background-color: #F9EBDE; color: #815854; border: 1px solid #815854;">모바일</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function recruit(button) {
+        var param = button.value;
+        var form = document.getElementById("recruit");
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", "recruit");
+        input.setAttribute("value", param);
+
+        if (form.contains(input)) {
+        form.removeChild(input);
+        } else {
+        form.appendChild(input);
+            button.style.backgroundColor = "#815854";
+            button.style.Color = "#F9EBDE";
+        }
+
+        form.submit();
+    }
+
+    function online(button) {
+        var param = button.value;
+        var form = document.getElementById("online");
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", "online");
+        input.setAttribute("value", param);
+
+        if (form.contains(input)) {
+        form.removeChild(input);
+        } else {
+        form.appendChild(input);
+            button.style.backgroundColor = "#815854";
+            button.style.Color = "#F9EBDE";
+        }
+
+        form.submit();
+    }
+
+    function typeCategory(button) {
+        var param = button.value;
+        var form = document.getElementById("typeCategory");
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", "type");
+        input.setAttribute("value", param);
+
+        if (form.contains(input)) {
+        form.removeChild(input);
+        } else {
+        form.appendChild(input);
+            button.style.backgroundColor = "#815854";
+            button.style.Color = "#F9EBDE";
+        }
+
+        form.submit();
+    }
+
+    function career(button) {
+        var param = button.value;
+        var form = document.getElementById("career");
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", "career");
+        input.setAttribute("value", param);
+
+        if (form.contains(input)) {
+        form.removeChild(input);
+        } else {
+        form.appendChild(input);
+            button.style.backgroundColor = "#815854";
+            button.style.Color = "#F9EBDE";
+        }
+
+        form.submit();
+    }
+</script>

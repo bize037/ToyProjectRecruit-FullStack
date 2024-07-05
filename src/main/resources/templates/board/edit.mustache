@@ -1,0 +1,176 @@
+{{>include/header}}
+
+{{#edit}}
+<section class="mb-4">
+    <br><br>
+    <div class="row justify-content-center">
+        <h2 style="color: #815854; text-align: center;">토이 프로젝트 모집글 수정</h2>
+        <br><br><br>
+        <div class="col-md-11 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="/board/edit/{{writeidx}}/ok" method="POST">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="writetitle" name="writetitle" class="form-control" value="{{writetitle}}">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="md-form mb-0">
+                            <select id="writerecruit" name="writerecruit" class="form-control" style="appearance:none">
+                                <option value="{{writerecruit}}" selected="selected" style="display:none;">{{writerecruit}}</option>
+                                <option value="모집중">모집중</option>
+                                <option value="모집완료">모집완료</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="md-form mb-0">
+                            <select id="writeonline" name="writeonline" class="form-control" style="appearance:none">
+                                <option value="{{writeonline}}" selected="selected" style="display:none;">{{writeonline}}</option>
+                                <option value="온라인">온라인</option>
+                                <option value="오프라인">오프라인</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="md-form mb-0">
+                            <input type="text" id="writeoffline" name="writeoffline" class="form-control" value="{{writeoffline}}">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="md-form mb-0">
+                            <select id="writecall" name="writecall" class="form-control" style="appearance:none">
+                                <option value="{{writecall}}" selected="selected" style="display:none;">{{writecall}}</option>
+                                <option value="구글폼">구글폼</option>
+                                <option value="이메일">이메일</option>
+                                <option value="오픈채팅">오픈채팅</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="md-form mb-0">
+                            <input type="text" id="writecallurl" name="writecallurl" class="form-control" value="{{writecallurl}}">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="md-form mb-0">
+                            <select id="writetype" name="writetype" class="form-control" style="appearance:none">
+                                <option value="{{writetype}}" selected="selected" style="display:none;">{{writetype}}</option>
+                                <option value="프론트엔드">프론트엔드</option>
+                                <option value="백엔드">백엔드</option>
+                                <option value="모바일">모바일</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="md-form mb-0">
+                            <select id="writeuselang" name="writeuselang" class="form-control" style="appearance:none">
+                                <option value="{{writeuselang}}" selected="selected" style="display:none;">{{writeuselang}}</option>
+                                <option value="미정" selected="selected">미정</option>
+                                <!-- 프론트 -->
+                                <option class="front" value="JavaScript">JavaScript</option>
+                                <option class="front" value="TypeScript">TypeScript</option>
+                                <option class="front" value="React">React</option>
+                                <option class="front" value="Vue">Vue</option>
+                                <option class="front" value="Svelte">Svelte</option>
+                                <option class="front" value="Nextjs">Nextjs</option>
+                                <!-- 백 -->
+                                <option class="end" value="Java">Java</option>
+                                <option class="end" value="Spring">Spring</option>
+                                <option class="end" value="Nodejs">Nodejs</option>
+                                <option class="end" value="Nestjs">Nestjs</option>
+                                <option class="end" value="Go">Go</option>
+                                <option class="end" value="Kotlin">Kotlin</option>
+                                <option class="end" value="Express">Express</option>
+                                <option class="end" value="MySQL">MySQL</option>
+                                <option class="end" value="MongoDB">MongoDB</option>
+                                <option class="end" value="Python">Python</option>
+                                <option class="end" value="C">C</option>
+                                <option class="end" value="Django">Django</option>
+                                <option class="end" value="php">php</option>
+                                <option class="end" value="jsp">jsp</option>
+                                <option class="end" value="GraphQL">GraphQL</option>
+                                <option class="end" value="Firebase">Firebase</option>
+                                <!-- 모바일 -->
+                                <option class="mobile" value="Flutter">Flutter</option>
+                                <option class="mobile" value="Swift">Swift</option>
+                                <option class="mobile" value="Kotlin">Kotlin</option>
+                                <option class="mobile" value="ReactNative">ReactNative</option>
+                                <option class="mobile" value="Unity">Unity</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="md-form mb-0">
+                            <select id="writepeoplecnt" name="writepeoplecnt" class="form-control" style="appearance:none">
+                                <option value="{{writepeoplecnt}}" selected="selected" style="display:none;">{{writepeoplecnt}}</option>
+                                <option value="미정">미정</option>
+                                <option value="1명">1명</option>
+                                <option value="2명">2명</option>
+                                <option value="3명">3명</option>
+                                <option value="4명">4명</option>
+                                <option value="5명">5명</option>
+                                <option value="6명">6명</option>
+                                <option value="7명">7명</option>
+                                <option value="8명">8명</option>
+                                <option value="9명">9명</option>
+                                <option value="10명 이상">10명 이상</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="md-form mb-0">
+                            <select id="writecareer" name="writecareer" class="form-control" style="appearance:none">
+                                <option value="{{writecareer}}" selected="selected">{{writecareer}}</option>
+                                <option value="초보">초보</option>
+                                <option value="경력자">경력자</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form" style="background-color: white">
+                            <textarea type="text" id="writecontent" name="writecontent" rows="2" class="form-control md-textarea" placeholder="본문을 작성하세요">{{writecontent}}</textarea>
+                            <script>
+                                ClassicEditor
+                                .create( document.querySelector('#writecontent'))
+                                .then( editor => {
+                                    console.log( editor );
+                                } )
+                                .catch( error => {
+                                    console.error( error );
+                                } );
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-center text-md-left">
+                    <button class="btn btn-info my-4 btn-block" type="submit" style="background-color: #815854; color: #F9EBDE; border: none;">등록</button>
+                </div>
+                <input type="hidden" id="userid" name="userid" value="{{userid}}">
+                <input type="hidden" id="writepw" name="writepw" value="{{writepw}}">
+            </form>
+            <div class="status"></div>
+        </div>
+        <br>
+    </div>
+</section>
+{{/edit}}
+
+{{>include/footer}}

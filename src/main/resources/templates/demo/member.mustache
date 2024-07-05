@@ -1,0 +1,26 @@
+{{>include/header}}
+<br><br>
+
+<div class="container">
+    <!-- Default form register -->
+    <form class="text-center border border-light p-5" action="/join/ok" method="POST">
+        <p class="h4 mb-4">회원가입</p>
+        <div class="form-row mb-4">
+            <div class="col">
+                <input type="text" id="username" name="username" class="form-control" placeholder="name">
+            </div>
+        </div>
+        <input type="text" id="userid" name="userid" class="form-control mb-4" placeholder="ID">
+        <div class="form-row mb-4">
+            <div class="col">
+                <input type="password" id="userpw" name="userpw" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+            </div>
+        </div>
+        <input type="email" id="useremail" name="useremail" class="form-control mb-4" placeholder="email">
+        <button class="btn btn-info my-4 btn-block" type="submit">회원가입</button>
+        <hr>
+    </form>
+    <!-- Default form register -->
+</div>
+
+{{>include/footer}}

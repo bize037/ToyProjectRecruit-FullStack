@@ -1,0 +1,158 @@
+{{>include/header}}
+{{#write}}
+<section class="mb-4">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <button class="btn btn-info my-4 btn-block" style="background-color: #815854; color: #F9EBDE; border: none; cursor: default;">{{writerecruit}}</button>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+            </div>
+            <div class="col-sm-8"></div>
+            <div class="col-sm-1">
+                <a id="edit" href="/board/edit/{{writeidx}}">
+                    <button id="modifyBtn" class="btn btn-info my-4 btn-block" style="background-color: #815854; color: #F9EBDE; border: none;">수정</button>
+                </a>
+            </div>
+            <div class="col-sm-1">
+                <a id="edit" href="/board/delete/{{writeidx}}">
+                    <button id="deleteBtn" class="btn btn-info my-4 btn-block" style="background-color: #815854; color: #F9EBDE; border: none;">삭제</button>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card" style="cursor=default;">
+                <div class="card-body" style="width:100%; height:100%; white-space:nowrap; overflow:hidden;">
+                    <h3 class="h1-responsive font-weight-bold text-center my-4">{{writetitle}}</h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-11"></div>
+                        <div class="col-sm-1">
+                            <h5>{{userid}}</h5>
+                        </div>
+                    </div>
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h5><strong>연락수단</strong></h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>{{writecall}}</h5>
+                        </div>
+                        <div class="col-sm-2">
+                            <h5><strong>온/오프라인</strong></h5>
+                        </div>
+                        <div class="col-sm-5">
+                            <h5>{{writeonline}}</h5>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-sm-2">
+                            <h5><strong>{{writecall}} 주소</strong></h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <h5>{{writecallurl}}</h5>
+                        </div>
+                        <div class="col-sm-2">
+                            <h5><strong>오프라인 장소</strong></h5>
+                        </div>
+                        <div class="col-sm-5">
+                            <h5>{{writeoffline}}</h5>
+                        </div>
+                    </div>
+                    <br>
+                    <!--포지션-->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h5><strong>포지션</strong></h5>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h5>{{writetype}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h5><strong>사용언어</strong></h5>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h5>{{writeuselang}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h5><strong>모집인원</strong></h5>
+                                </div>
+                                <div class="col-sm-7">
+                                    <h5>{{writepeoplecnt}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h5><strong>초보/경력자</strong></h5>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>{{writecareer}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card" style="cursor: default; width: 100%; height: 100%; border: 2px solid #F9EBDE; padding: 0.5rem; line-height: 1rem; border-radius: 0.5rem;">
+                                <div class="card-body">
+                                    <strong style="color: #F9EBDE;">
+                                        <div id="writecontent" name="writecontent" style="background-color: #815854">{{writecontent}}</div>
+                                    </strong>
+                                    <script>
+                                        var content = document.getElementById('writecontent');
+                                        content.innerHTML = content.textContent
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-7">
+                <input type="text" id="wpw" class="form-control" value="" placeholder="수정 및 삭제를 원하시면 게시글 작성 시 설정했던 비밀번호를 입력해주세요">
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
+
+<script>
+    $(document).ready(function() {
+        $('#wpw').on('input', function() {
+            var check = $('#wpw').val();
+            if (check == '{{writepw}}') {
+            $('#modifyBtn').show();
+            $('#deleteBtn').show();
+            }
+            else {
+                $('#modifyBtn').hide();
+                $('#deleteBtn').hide();
+            }
+        });
+    });
+</script>
+{{/write}}
+{{>include/footer}}

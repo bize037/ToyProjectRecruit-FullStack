@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>토이 프로젝트</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
+    <script>
+		$(document).ready(function() {
+			$("#writeoffline").hide();
+			$("#writecallurl").hide();
+
+			$("#writeonline").change(function() {
+			    var writeonline_selected = $("#writeonline option:selected").val();
+			    $("#writeoffline").hide();
+
+			    if (writeonline_selected == '오프라인') {
+			        $("#writeoffline").show();
+			    }
+			});
+
+			$("#writecall").change(function() {
+			    var writcall_selected = $("#writecall option:selected").val();
+			    $("#writecallurl").hide();
+
+			    if (writcall_selected == '구글폼') {
+			        $("#writecallurl").show();
+			        $("#writecallurl").attr('placeholder', '구글폼 링크');
+			    }
+
+			    if (writcall_selected == '이메일') {
+			        $("#writecallurl").show();
+			        $("#writecallurl").attr('placeholder', '이메일 주소');
+			    }
+
+			    if (writcall_selected == '오픈채팅') {
+			        $("#writecallurl").show();
+			        $("#writecallurl").attr('placeholder', '오픈채팅 링크');
+			    }
+			});
+
+			$("#writeuselang").hide();
+
+			$("#writetype").change(function() {
+				var type_selected = $("#writetype option:selected").val();
+				$("#writeuselang").hide();
+
+				if (type_selected == '프론트엔드') {
+			        $("#writeuselang").show();
+					$("option.front").show();
+					$("option.end").hide();
+					$("option.mobile").hide();
+				}
+
+				if (type_selected == '백엔드') {
+			        $("#writeuselang").show();
+					$("option.front").hide();
+					$("option.end").show();
+					$("option.mobile").hide();
+				}
+
+				if (type_selected == '모바일') {
+			        $("#writeuselang").show();
+					$("option.front").hide();
+					$("option.end").hide();
+					$("option.mobile").show();
+				}
+			});
+
+			$('#modifyBtn').hide();
+            $('#deleteBtn').hide();
+
+		});
+	</script>
+    <style>
+
+    body {
+      background-color: #F9EBDE;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      background-color: #815854;
+      border: none;
+      padding: 0.5rem;
+      line-height: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .card h3 {
+      background-color: #815854;
+      color: #F9EBDE;
+    }
+
+    .card-body {
+      background-color: #815854;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background-color: #815854;
+    }
+
+    #navbarNavDropdown {
+      background-color: #815854;
+    }
+
+    .search {
+      background-color: #815854;
+    }
+
+    .nav-item {
+      background-color: #815854;
+    }
+
+    p {
+      background-color: #white;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #815854;
+      padding: 20px;
+    }
+
+    footer p {
+      background-color: #815854;
+      color: #F9EBDE;
+    }
+
+    #keyword {
+      border-color: #ccc;
+      box-shadow: none;
+    }
+
+    #keyword:focus {
+      border-color: #ccc;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      outline: none;
+    }
+
+    #keyword {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .card-body div {
+      background-color: #815854;
+    }
+    .card-body div h5 {
+      background-color: #815854;
+      color: #F9EBDE;
+    }
+    .card-body div h6 {
+      background-color: #815854;
+      color: #F9EBDE;
+    }
+    img {
+      background-color: #815854;
+    }
+    strong {
+      background-color: #815854;
+    }
+
+    .form-control:focus {
+      border: 1px solid #815854;
+      outline: none;
+      box-shadow: none;
+    }
+    option {
+      background-color: #F9EBDE;
+      color: #815854;
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/"><img src="/logo_only_light.png" width="48px" height="60px"></a>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <form action="/board/search" method="GET">
+            <div class="search">
+                <input id="keyword" name="keyword" type="text" placeholder="모집글 검색" class="form-control">
+            </div>
+        </form>
+        <ul class="navbar-nav">
+            <li class="nav-item"> <!-- class에 active 있으면 글씨 진하게 표시됨 -->
+                <a class="nav-link" href="/board" style="color: #F9EBDE;">모집글</a>
+            </li>
+            <li class="nav-item"> <!-- class에 active 있으면 글씨 진하게 표시됨 -->
+                <a class="nav-link" href="/write" style="color: #F9EBDE;">모집글쓰기</a>
+            </li>
+        </ul>
+    </div>
+</nav>

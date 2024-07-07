@@ -18,4 +18,4 @@
 - 모집글을 작성할 때 해당 모집글을 수정/삭제할 때 사용할 비밀번호 설정
 - 해당 게시글에 비밀번호를 입력하면 수정/삭제 버튼이 나타나도록 설계
 
-#### 자세한 기능 및 페이지 설명은 [해당 링크](https://peach-currant-ed0.notion.site/c999704a591c4067abf7ec939adbeecf?pvs=74)에서 확인할 수 있습니다.
+#### 자세한 기능 및 페이지 설명은 [해당 링크](https://peach-currant-ed0.notion.site/17112cb81b2445e7ada0fffbad25776b?pvs=4)에서 확인할 수 있습니다.
